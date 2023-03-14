@@ -135,8 +135,7 @@ dodaje +1 do l. zywych sasiadow, jesli sa sasiadami kol. zywej w aktW*/
 void dodajSasiadowDlaWiersza(wiersz * aktW, wiersz * sasiadW) {
     kolumna * aktK = aktW -> pierwszaKolumna;
     kolumna * aktKSasiad = sasiadW -> pierwszaKolumna;
-    kolumna * poprzedniaKSasiad = NULL;               /*od niej zaczynam szukac
-													  sasiadow kolejnych kol.*/
+    kolumna * poprzedniaKSasiad = NULL;               /*od niej zaczynam szukac sasiadow kolejnych kol.*/
     while (aktK != NULL) {
         if (aktK -> stan == ZYWA) {
 			
@@ -144,23 +143,20 @@ void dodajSasiadowDlaWiersza(wiersz * aktW, wiersz * sasiadW) {
             
             kolumna * sasiadK;				//kol. w sasiadW ktorej dodaje +1 do l.zywych sasiadow/
 																																										
-            aktKSasiad = dolaczKolumneONumerze(sasiadW, poprzedniaKSasiad,
-                                               aktKSasiad, numer - 1, MARTWA);  
+            aktKSasiad = dolaczKolumneONumerze(sasiadW, poprzedniaKSasiad, aktKSasiad, numer - 1, MARTWA);  
                                                                                                                                                                        
-            sasiadK = aktKSasiad; 			              //nr sasiadK: numer-1 
+            sasiadK = aktKSasiad; 			 //nr sasiadK: numer-1 
             sasiadK -> liczbaSasiadow = (sasiadK -> liczbaSasiadow) + 1;
             		
 															
             sasiadK = dolaczKolumneONumerze(sasiadW,        //nr sasiadK: numer
-											sasiadK, sasiadK -> nastepnaKolumna,
-                                            numer, MARTWA);
+					sasiadK, sasiadK -> nastepnaKolumna, numer, MARTWA);
             if (aktW != sasiadW) {
                 sasiadK -> liczbaSasiadow = (sasiadK -> liczbaSasiadow) + 1;
             }
             
             sasiadK = dolaczKolumneONumerze(sasiadW, 	  //nr sasiadK: numer+1
-											sasiadK, sasiadK -> nastepnaKolumna,
-                                            numer + 1, MARTWA);
+					sasiadK, sasiadK -> nastepnaKolumna, numer + 1, MARTWA);
             sasiadK -> liczbaSasiadow = (sasiadK -> liczbaSasiadow) + 1;
             
             poprzedniaKSasiad = aktKSasiad;
