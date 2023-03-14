@@ -27,4 +27,4 @@ To exit the game type: .
 
 to compile run : gcc  -DWIERSZE=22 -DKOLUMNY=80 main.c -o main 
 to change the size of a board f.ex to 25 rows and 100 columns run: gcc  -DWIERSZE=25 -DKOLUMNY=100 main.c -o main 
-exemplary inputs and outputs can be found in in.out folder
+Sample input and output files can be found in in.out folder
